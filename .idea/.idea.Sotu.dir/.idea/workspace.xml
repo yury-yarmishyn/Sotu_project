@@ -8,7 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87e49b45-c2c2-41e3-93c6-58756eb7ce32" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Content/Maps/StartupMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/StartupMap.umap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Blueprints/Fonts/DT_TextSheet.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sotu.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sotu.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Overlay/Subwidget/WBP_EffectMessage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Overlay/Subwidget/WBP_EffectMessage.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +33,9 @@
     <setting file="file://$PROJECT_DIR$/Source/Sotu/Sotu.Build.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UE_5.4/Engine/Source/Runtime/Core/Private/Misc/Parse.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2nk8vJ17fAfz44zuL176Fr78OLd" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,7 +45,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Uproject.Sotu.executor": "Run",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -135,6 +137,7 @@
       <option name="presentableId" value="Default" />
       <updated>1729505943452</updated>
       <workItem from="1729505944518" duration="11455000" />
+      <workItem from="1729634075023" duration="1506000" />
     </task>
     <servers />
   </component>

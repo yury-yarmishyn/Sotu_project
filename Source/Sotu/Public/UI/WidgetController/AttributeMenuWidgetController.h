@@ -9,7 +9,7 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(BlueprintType, Blueprintable)
 class SOTU_API UAttributeMenuWidgetController : public USotuWidgetController
 {
 	GENERATED_BODY()

@@ -2,22 +2,21 @@
 
 
 #include "AbilitySystem/SotuAbilitySystemLibrary.h"
-#include "Kismet/GameplayStatics.h"
-#include "Player/SotuPlayerState.h"
 #include "UI/HUD/SotuHUD.h"
+#include "UI/WidgetController/SotuWidgetController.h"
 
 UOverlayWidgetController* USotuAbilitySystemLibrary::GetOverlayWidgetController(const UObject* WorldContextObject)
 {
-	if (APlayerController* PC = UGameplayStatics::GetPlayerController(WorldContextObject, 0)
-	{
-		if (ASotuHUD* SotuHUD = Cast<ASotuHUD>(PC->GetHUD()))
-		{
-			ASotuPlayerState* PS = PC->GetPlayerState<ASotuPlayerState>();
-			UAbilitySystemComponent* ASC = PS->GetAbilitySystemComponent();
-			UAttributeSet* AS = PS->GetAttributeSet();
-			const FWidgetControllerParams WidgetControllerParams(PC, PS, ASC, AS);
-			return SotuHUD->GetOverlayWidgetController(WidgetControllerParams);
-		}
-	}
-	return nullptr;
+	return GetWidgetController<UOverlayWidgetController>(WorldContextObject, 
+		[](ASotuHUD* SotuHUD, const FWidgetControllerParams& Params) {
+			return SotuHUD->GetOverlayWidgetController(Params);
+		});
+}
+
+UAttributeMenuWidgetController* USotuAbilitySystemLibrary::GetAttributeMenuWidgetController(const UObject* WorldContextObject)
+{
+	return GetWidgetController<UAttributeMenuWidgetController>(WorldContextObject, 
+		[](ASotuHUD* SotuHUD, const FWidgetControllerParams& Params) {
+			return SotuHUD->GetAttributeMenuWidgetController(Params);
+		});
 }

@@ -7,8 +7,6 @@
 void USotuAbilitySystemComponent::AbilityActorInfoSet()
 {
 	OnGameplayEffectAppliedDelegateToSelf.AddUObject(this, &USotuAbilitySystemComponent::EffectApplied);
-
-	const FSotuGameplayTags& GameplayTags = FSotuGameplayTags::Get();
 }
 
 void USotuAbilitySystemComponent::EffectApplied(UAbilitySystemComponent* AbilitySystemComponent,

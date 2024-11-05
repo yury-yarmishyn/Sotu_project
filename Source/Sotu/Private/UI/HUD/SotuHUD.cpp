@@ -2,19 +2,20 @@
 
 
 #include "UI/HUD/SotuHUD.h"
-
 #include "UI/Widget/SotuUserWidget.h"
 #include "UI/WidgetController/AttributeMenuWidgetController.h"
 #include "UI/WidgetController/OverlayWidgetController.h"
 
 UOverlayWidgetController* ASotuHUD::GetOverlayWidgetController(const FWidgetControllerParams& WCParams)
 {
-	return GetWidgetController<UOverlayWidgetController>(OverlayWidgetController, OverlayWidgetControllerClass, WCParams);
+	OverlayWidgetController = GetWidgetController(OverlayWidgetController, OverlayWidgetControllerClass, WCParams);
+	return OverlayWidgetController; 
 }
 
 UAttributeMenuWidgetController* ASotuHUD::GetAttributeMenuWidgetController(const FWidgetControllerParams& WCParams)
 {
-	return GetWidgetController<UAttributeMenuWidgetController>(AttributeMenuWidgetController, AttributeMenuWidgetControllerClass, WCParams);
+	AttributeMenuWidgetController = GetWidgetController(AttributeMenuWidgetController, AttributeMenuWidgetControllerClass, WCParams);
+	return AttributeMenuWidgetController; 
 }
 
 void ASotuHUD::InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS)

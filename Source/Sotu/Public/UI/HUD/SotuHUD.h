@@ -6,6 +6,7 @@
 #include "GameFramework/HUD.h"
 #include "SotuHUD.generated.h"
 
+
 class UAttributeMenuWidgetController;
 class UAttributeSet;
 class UAbilitySystemComponent;
@@ -26,8 +27,9 @@ public:
 
 	void InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS);
 	
-	template<typename T>
-	T* GetWidgetController(T* ControllerVariable, TSubclassOf<T> ControllerClass, const FWidgetControllerParams& WCParams);
+	template <class T>
+	TObjectPtr<T> GetWidgetController(TObjectPtr<T> Controller, TSubclassOf<T> ControllerClass,
+	                                  const FWidgetControllerParams& WCParams);
 
 protected:
 
@@ -52,14 +54,14 @@ private:
 	TSubclassOf<UAttributeMenuWidgetController> AttributeMenuWidgetControllerClass;
 };
 
-template<typename T>
-T* ASotuHUD::GetWidgetController(T* ControllerVariable, TSubclassOf<T> ControllerClass, const FWidgetControllerParams& WCParams)
+template <typename T>
+TObjectPtr<T> ASotuHUD::GetWidgetController(TObjectPtr<T> Controller, TSubclassOf<T> ControllerClass, const FWidgetControllerParams& WCParams)
 {
-	if (ControllerVariable == nullptr)
+	if (!Controller) 
 	{
-		ControllerVariable = NewObject<T>(this, ControllerClass);
-        ControllerVariable->SetWidgetControllerParams(WCParams);
-		ControllerVariable->BindCallbacksToDependencies();
+		Controller = NewObject<T>(this, ControllerClass); 
+		Controller->SetWidgetControllerParams(WCParams);
+		Controller->BindCallbacksToDependencies();
 	}
-	return ControllerVariable;
+	return Controller;
 }

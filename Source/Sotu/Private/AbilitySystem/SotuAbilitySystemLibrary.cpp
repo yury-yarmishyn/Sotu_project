@@ -1,5 +1,6 @@
 // stan
 
+#pragma once
 
 #include "AbilitySystem/SotuAbilitySystemLibrary.h"
 #include "UI/HUD/SotuHUD.h"

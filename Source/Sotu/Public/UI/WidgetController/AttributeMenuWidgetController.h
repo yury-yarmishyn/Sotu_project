@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameplayTagsManager.h"
 #include "AbilitySystem/Data/AttributeInfo.h"
 #include "UI/WidgetController/SotuWidgetController.h"
 #include "AttributeMenuWidgetController.generated.h"
@@ -24,8 +25,14 @@ public:
 	
 	UPROPERTY(BlueprintAssignable, Category = "GAS|Attributes")
 	FAttributeInfoSignature AttributeInfoDelegate;
+	
+	UFUNCTION(BlueprintPure, Category = "Gameplay Tags")
+	static TArray<FGameplayTag> GetAllChildrenTags(FGameplayTag ParentTag);
 
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	TObjectPtr<UAttributeInfo> AttributeInfo;
 };
+
+
+

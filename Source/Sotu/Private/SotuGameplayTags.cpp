@@ -26,6 +26,7 @@ void FSotuGameplayTags::InitializeNativeGameplayTags()
 		FName("Attributes.Primary.Resilience"),
 		FString("Increases Armor and Armor Penetration")
 		);
+	
 	GameplayTags.Attributes_Primary_Vigor = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Attributes.Primary.Vigor"),
 		FString("Increases Health")

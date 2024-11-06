@@ -11,14 +11,15 @@
 void UAttributeMenuWidgetController::BindCallbacksToDependencies()
 {
 	USotuAttributeSet* AS = CastChecked<USotuAttributeSet>(AttributeSet);
+	
+	check(AttributeInfo);
+	
 	for (auto& Pair : AS->TagsToAttributes)
 	{
 		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(Pair.Value()).AddLambda(
-		[this, Pair, AS](const FOnAttributeChangeData& Data)
+		[this, Pair](const FOnAttributeChangeData& Data)
 		{
-			FSotuAttributeInfo Info = AttributeInfo->FindAttributeInfoForTag(Pair.Key);
-			Info.AttributeValue = Pair.Value().GetNumericValue(AS);
-			AttributeInfoDelegate.Broadcast(Info);
+			BroadcastAttributeInfo(Pair.Key, Pair.Value());
 		}
 	);
 	}
@@ -32,9 +33,7 @@ void UAttributeMenuWidgetController::BroadcastInitialValues()
 	
 	for (auto& Pair : AS->TagsToAttributes)
 	{
-		FSotuAttributeInfo Info = AttributeInfo->FindAttributeInfoForTag(Pair.Key);
-		Info.AttributeValue = Pair.Value().GetNumericValue(AS);
-		AttributeInfoDelegate.Broadcast(Info);
+		BroadcastAttributeInfo(Pair.Key, Pair.Value());
 	}
 }
 
@@ -46,4 +45,12 @@ TArray<FGameplayTag> UAttributeMenuWidgetController::GetAllChildrenTags(FGamepla
 	ChildrenTags.GetGameplayTagArray(TagArray);
 	
 	return TagArray;
+}
+
+void UAttributeMenuWidgetController::BroadcastAttributeInfo(const FGameplayTag& AttributeTag,
+	const FGameplayAttribute& Attribute) const
+{
+	FSotuAttributeInfo Info = AttributeInfo->FindAttributeInfoForTag(AttributeTag);
+	Info.AttributeValue = Attribute.GetNumericValue(AttributeSet);
+	AttributeInfoDelegate.Broadcast(Info);
 }

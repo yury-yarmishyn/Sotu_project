@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "Input/SotuInputConfig.h"
 #include "SotuPlayerController.generated.h"
 
 
@@ -38,4 +39,6 @@ private:
 
 	TScriptInterface<IEnemyInterface> LastActor;
 	TScriptInterface<IEnemyInterface> ThisActor;
+
+	TObjectPtr<USotuInputConfig> InputConfig;
 };

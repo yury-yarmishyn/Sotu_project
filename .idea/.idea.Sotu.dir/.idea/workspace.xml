@@ -9,17 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="87e49b45-c2c2-41e3-93c6-58756eb7ce32" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sotu.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sotu.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Character/Aura/BP_SotuCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Character/Aura/BP_SotuCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/IMC_SotuContext.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Input/IMC_SotuContext.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/StartupMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/StartupMap.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sotu.uproject.DotSettings.user" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Sotu/Private/AbilitySystem/SotuAbilitySystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Private/AbilitySystem/SotuAbilitySystemComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Sotu/Private/Character/SotuCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Private/Character/SotuCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Sotu/Private/Character/SotuCharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Private/Character/SotuCharacterBase.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Sotu/Private/SotuGameplayTags.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Private/SotuGameplayTags.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Sotu/Public/AbilitySystem/SotuAbilitySystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Public/AbilitySystem/SotuAbilitySystemComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Sotu/Public/Character/SotuCharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Public/Character/SotuCharacterBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Sotu/Public/SotuGameplayTags.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Public/SotuGameplayTags.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/DA_SotuInputConfig.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Input/DA_SotuInputConfig.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sotu.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Sotu.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Sotu/Public/Player/SotuPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Public/Player/SotuPlayerController.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +172,7 @@
       <workItem from="1730902701956" duration="5585000" />
       <workItem from="1730936492173" duration="2284000" />
       <workItem from="1730975908439" duration="2466000" />
-      <workItem from="1731065929165" duration="4731000" />
+      <workItem from="1731065929165" duration="8025000" />
     </task>
     <servers />
   </component>

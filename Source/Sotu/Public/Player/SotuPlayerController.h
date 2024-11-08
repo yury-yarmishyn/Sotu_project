@@ -12,6 +12,7 @@ class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
 class IEnemyInterface;
+class USotuAbilitySystemComponent;
 
 /**
  * 
@@ -40,5 +41,15 @@ private:
 	TScriptInterface<IEnemyInterface> LastActor;
 	TScriptInterface<IEnemyInterface> ThisActor;
 
+	void AbilityInputTagPressed(FGameplayTag InputTag);
+	void AbilityInputTagReleased(FGameplayTag InputTag);
+	void AbilityInputTagHeld(FGameplayTag InputTag);
+	
+	UPROPERTY(EditDefaultsOnly, Category="Input")
 	TObjectPtr<USotuInputConfig> InputConfig;
+
+	UPROPERTY()
+	TObjectPtr<USotuAbilitySystemComponent> SotuAbilitySystemComponent;
+	
+	USotuAbilitySystemComponent* GetAbilitySystemComponent();
 };

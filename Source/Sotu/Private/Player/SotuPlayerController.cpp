@@ -1,8 +1,11 @@
 // stan
 
 #include "Player/SotuPlayerController.h"
+
+#include "AbilitySystemBlueprintLibrary.h"
 #include "EnhancedInputSubsystems.h"
-#include "EnhancedInputComponent.h"
+#include "AbilitySystem/SotuAbilitySystemComponent.h"
+#include "Input/SotuInputComponent.h"
 #include "Interaction/EnemyInterface.h"
 
 ASotuPlayerController::ASotuPlayerController()
@@ -75,6 +78,33 @@ void ASotuPlayerController::CursorTrace()
 	}
 }
 
+void ASotuPlayerController::AbilityInputTagPressed(FGameplayTag InputTag)
+{
+	
+}
+
+void ASotuPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
+{
+	if (GetAbilitySystemComponent() == nullptr) return;
+	GetAbilitySystemComponent()->AbilityInputTagReleased(InputTag);
+}
+
+void ASotuPlayerController::AbilityInputTagHeld(FGameplayTag InputTag)
+{
+	if (GetAbilitySystemComponent() == nullptr) return;
+	GetAbilitySystemComponent()->AbilityInputTagHeld(InputTag);
+}
+
+USotuAbilitySystemComponent* ASotuPlayerController::GetAbilitySystemComponent()
+{
+	if(SotuAbilitySystemComponent == nullptr)
+	{
+		SotuAbilitySystemComponent = Cast<USotuAbilitySystemComponent>(
+			UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetPawn<APawn>()));  
+	}
+	return SotuAbilitySystemComponent;
+}
+
 void ASotuPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
@@ -99,9 +129,12 @@ void ASotuPlayerController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
 
-	UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent);
+	USotuInputComponent* SotuInputComponent = CastChecked<USotuInputComponent>(InputComponent);
 
-	EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ASotuPlayerController::Move);
+	SotuInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ASotuPlayerController::Move);
+
+	SotuInputComponent->BindAbilityActions(InputConfig, this, &ThisClass::AbilityInputTagPressed,
+		&ThisClass::AbilityInputTagReleased, &ThisClass::AbilityInputTagHeld);
 }
 
 void ASotuPlayerController::Move(const FInputActionValue& InputActionValue)

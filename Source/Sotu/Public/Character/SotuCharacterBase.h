@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystemInterface.h"
+#include "Abilities/GameplayAbility.h"
 #include "GameFramework/Character.h"
 #include "Interaction/CombatInterface.h"
 #include "SotuCharacterBase.generated.h"
@@ -46,4 +47,9 @@ protected:
 
 	void ApplyEffectToSelf(const TSubclassOf<UGameplayEffect>& GameplayEffectClass, float Level) const;
 	void InitializeDefaultAttributes() const;
+
+	void AddCharacterAbilities();
+private:
+	UPROPERTY(EditAnywhere, Category = "Abilities")
+	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
 };

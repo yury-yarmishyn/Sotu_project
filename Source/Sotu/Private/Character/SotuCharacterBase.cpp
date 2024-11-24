@@ -25,6 +25,12 @@ void ASotuCharacterBase::BeginPlay()
 	
 }
 
+FVector ASotuCharacterBase::GetCombatSocketLocation()
+{
+	check(Weapon);
+	return Weapon->GetSocketLocation(WeaponTipSocketName);
+}
+
 void ASotuCharacterBase::InitAbilityActorInfo()
 {
 	

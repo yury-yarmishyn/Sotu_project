@@ -7,10 +7,10 @@ void UOverlayWidgetController::BroadcastInitialValues()
 {
 	const USotuAttributeSet* SotuAttributeSet = CastChecked<USotuAttributeSet>(AttributeSet);
 
-	OnHealthChanged.Broadcast(SotuAttributeSet->GetHealth());
-	OnMaxHealthChanged.Broadcast(SotuAttributeSet->GetMaxHealth());
-	OnManaChanged.Broadcast(SotuAttributeSet->GetMana());
-	OnMaxManaChanged.Broadcast(SotuAttributeSet->GetMaxMana());
+	OnParanoiaChanged.Broadcast(SotuAttributeSet->GetParanoia());
+	OnMaxParanoiaChanged.Broadcast(SotuAttributeSet->GetMaxParanoia());
+	OnLifeChanged.Broadcast(SotuAttributeSet->GetLife());
+	OnMaxLifeChanged.Broadcast(SotuAttributeSet->GetMaxLife());
 }
 
 void UOverlayWidgetController::BindCallbacksToDependencies()
@@ -18,34 +18,34 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 	const USotuAttributeSet* SotuAttributeSet = CastChecked<USotuAttributeSet>(AttributeSet);
 
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-		SotuAttributeSet->GetHealthAttribute()).AddLambda(
+		SotuAttributeSet->GetParanoiaAttribute()).AddLambda(
 			[this](const FOnAttributeChangeData& Data)
 			{
-				OnHealthChanged.Broadcast(Data.NewValue);
+				OnParanoiaChanged.Broadcast(Data.NewValue);
 			}
 		);
 
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-		SotuAttributeSet->GetMaxHealthAttribute()).AddLambda(
+		SotuAttributeSet->GetMaxParanoiaAttribute()).AddLambda(
 			[this](const FOnAttributeChangeData& Data)
 			{
-				OnMaxHealthChanged.Broadcast(Data.NewValue);
+				OnMaxParanoiaChanged.Broadcast(Data.NewValue);
 			}
 		);
 
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-		SotuAttributeSet->GetManaAttribute()).AddLambda(
+		SotuAttributeSet->GetLifeAttribute()).AddLambda(
 			[this](const FOnAttributeChangeData& Data)
 			{
-				OnManaChanged.Broadcast(Data.NewValue);
+				OnLifeChanged.Broadcast(Data.NewValue);
 			}
 		);
 
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-		SotuAttributeSet->GetMaxManaAttribute()).AddLambda(
+		SotuAttributeSet->GetMaxLifeAttribute()).AddLambda(
 			[this](const FOnAttributeChangeData& Data)
 			{
-				OnMaxManaChanged.Broadcast(Data.NewValue);
+				OnMaxLifeChanged.Broadcast(Data.NewValue);
 			}
 		);
 	

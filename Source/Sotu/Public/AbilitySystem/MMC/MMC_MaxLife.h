@@ -4,21 +4,22 @@
 
 #include "CoreMinimal.h"
 #include "GameplayModMagnitudeCalculation.h"
-#include "MMC_MaxHealth.generated.h"
+#include "MMC_MaxLife.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class SOTU_API UMMC_MaxHealth : public UGameplayModMagnitudeCalculation
+class SOTU_API UMMC_MaxLife : public UGameplayModMagnitudeCalculation
 {
 	GENERATED_BODY()
-
+	
 public:
-	UMMC_MaxHealth();
-
+	UMMC_MaxLife();
+	
 	virtual float CalculateBaseMagnitude_Implementation(const FGameplayEffectSpec& Spec) const override;
 
 private:
-	FGameplayEffectAttributeCaptureDefinition VigorDef;
+	FGameplayEffectAttributeCaptureDefinition FaithDef;
 };
+

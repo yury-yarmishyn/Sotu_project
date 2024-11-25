@@ -70,127 +70,127 @@ public:
 	
 	// Vital Attributes 
 	
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Health, Category = "Vital Attributes")
-	FGameplayAttributeData Health;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, Health);
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Paranoia, Category = "Vital Attributes")
+	FGameplayAttributeData Paranoia;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, Paranoia);
 
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Mana, Category = "Vital Attributes")
-	FGameplayAttributeData Mana;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, Mana);
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Life, Category = "Vital Attributes")
+	FGameplayAttributeData Life;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, Life);
 	
 	// Primary Attributes 
 
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Strength, Category = "Primary Attributes")
-	FGameplayAttributeData Strength;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, Strength);
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Power, Category = "Primary Attributes")
+	FGameplayAttributeData Power;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, Power);
 	
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Intelligence, Category = "Primary Attributes")
-	FGameplayAttributeData Intelligence;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, Intelligence);
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Faith, Category = "Primary Attributes")
+	FGameplayAttributeData Faith;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, Faith);
 	
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Resilience, Category = "Primary Attributes")
-	FGameplayAttributeData Resilience;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, Resilience);
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Tempo, Category = "Primary Attributes")
+	FGameplayAttributeData Tempo;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, Tempo);
 	
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Vigor, Category = "Primary Attributes")
-	FGameplayAttributeData Vigor;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, Vigor);
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Fortune, Category = "Primary Attributes")
+	FGameplayAttributeData Fortune;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, Fortune);
 	
 	// Secondary Attributes 
 
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Armor, Category = "Secondary Attributes")
-	FGameplayAttributeData Armor;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, Armor);
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_PhysicalDamage, Category = "Secondary Attributes")
+	FGameplayAttributeData PhysicalDamage;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, PhysicalDamage);
 
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_ArmorPenetration, Category = "Secondary Attributes")
-	FGameplayAttributeData ArmorPenetration;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, ArmorPenetration);
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_HeartDamage, Category = "Secondary Attributes")
+	FGameplayAttributeData HeartDamage;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, HeartDamage);
 
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_BlockChance, Category = "Secondary Attributes")
-	FGameplayAttributeData BlockChance;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, BlockChance);
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_CriticalHitDamage, Category = "Secondary Attributes")
+	FGameplayAttributeData CriticalHitDamage;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, CriticalHitDamage);
+
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_AttackSpeed, Category = "Secondary Attributes")
+	FGameplayAttributeData AttackSpeed;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, AttackSpeed);
+	
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_HeartCastSpeed, Category = "Secondary Attributes")
+	FGameplayAttributeData HeartCastSpeed;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, HeartCastSpeed);
+
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_LifeRecoverySpeed, Category = "Secondary Attributes")
+	FGameplayAttributeData LifeRecoverySpeed;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, LifeRecoverySpeed);
 
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_CriticalHitChance, Category = "Secondary Attributes")
 	FGameplayAttributeData CriticalHitChance;
 	ATTRIBUTE_ACCESSORS(USotuAttributeSet, CriticalHitChance);
-	
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_CriticalHitDamage, Category = "Secondary Attributes")
-	FGameplayAttributeData CriticalHitDamage;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, CriticalHitDamage);
-	
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_CriticalHitResistance, Category = "Secondary Attributes")
-	FGameplayAttributeData CriticalHitResistance;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, CriticalHitResistance);
 
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_HealthRegeneration, Category = "Secondary Attributes")
-	FGameplayAttributeData HealthRegeneration;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, HealthRegeneration);
-
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_ManaRegeneration, Category = "Secondary Attributes")
-	FGameplayAttributeData ManaRegeneration;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, ManaRegeneration);
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_DamageCancellationChance, Category = "Secondary Attributes")
+	FGameplayAttributeData DamageCancellationChance;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, DamageCancellationChance);
 	
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_MaxHealth, Category = "Secondary Attributes")
-	FGameplayAttributeData MaxHealth;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, MaxHealth);
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_MaxParanoia, Category = "Secondary Attributes")
+	FGameplayAttributeData MaxParanoia;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, MaxParanoia);
 	
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_MaxMana, Category = "Secondary Attributes")
-	FGameplayAttributeData MaxMana;
-	ATTRIBUTE_ACCESSORS(USotuAttributeSet, MaxMana);
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_MaxLife, Category = "Secondary Attributes")
+	FGameplayAttributeData MaxLife;
+	ATTRIBUTE_ACCESSORS(USotuAttributeSet, MaxLife);
 
 	// Vital Attributes func
 	
 	UFUNCTION()
-	void OnRep_Health(const FGameplayAttributeData& OldHealth) const;
+	void OnRep_Paranoia(const FGameplayAttributeData& OldParanoia) const;
 
 	UFUNCTION()
-	void OnRep_Mana(const FGameplayAttributeData& OldMana) const;
+	void OnRep_Life(const FGameplayAttributeData& OldLife) const;
 	
 	// Primary Attributes func
 	
 	UFUNCTION()
-	void OnRep_Strength(const FGameplayAttributeData& OldStrength) const;
+	void OnRep_Power(const FGameplayAttributeData& OldPower) const;
 
 	UFUNCTION()
-	void OnRep_Intelligence(const FGameplayAttributeData& OldIntelligence) const;
+	void OnRep_Faith(const FGameplayAttributeData& OldFaith) const;
 	
 	UFUNCTION()
-	void OnRep_Resilience(const FGameplayAttributeData& OldResilience) const;
+	void OnRep_Tempo(const FGameplayAttributeData& OldTempo) const;
 	
 	UFUNCTION()
-	void OnRep_Vigor(const FGameplayAttributeData& OldVigor) const;
+	void OnRep_Fortune(const FGameplayAttributeData& OldFortune) const;
 	
 	// Secondary Attributes func 
 
 	UFUNCTION()
-	void OnRep_Armor(const FGameplayAttributeData& OldArmor) const;
+	void OnRep_PhysicalDamage(const FGameplayAttributeData& OldPhysicalDamage) const;
 
 	UFUNCTION()
-	void OnRep_ArmorPenetration(const FGameplayAttributeData& OldArmorPenetration) const;
-
-	UFUNCTION()
-	void OnRep_BlockChance(const FGameplayAttributeData& OldBlockChance) const;
-
-	UFUNCTION()
-	void OnRep_CriticalHitChance(const FGameplayAttributeData& OldCriticalHitChance) const;
+	void OnRep_HeartDamage(const FGameplayAttributeData& OldHeartDamage) const;
 
 	UFUNCTION()
 	void OnRep_CriticalHitDamage(const FGameplayAttributeData& OldCriticalHitDamage) const;
 
 	UFUNCTION()
-	void OnRep_CriticalHitResistance(const FGameplayAttributeData& OldCriticalHitResistance) const;
+	void OnRep_AttackSpeed(const FGameplayAttributeData& OldAttackSpeed) const;
 
 	UFUNCTION()
-	void OnRep_HealthRegeneration(const FGameplayAttributeData& OldHealthRegeneration) const;
+	void OnRep_HeartCastSpeed(const FGameplayAttributeData& OldHeartCastSpeed) const;
 
 	UFUNCTION()
-	void OnRep_ManaRegeneration(const FGameplayAttributeData& OldManaRegeneration) const;
+	void OnRep_LifeRecoverySpeed(const FGameplayAttributeData& OldLifeRecoverySpeed) const;
+
+	UFUNCTION()
+	void OnRep_CriticalHitChance(const FGameplayAttributeData& OldCriticalHitChance) const;
+
+	UFUNCTION()
+	void OnRep_DamageCancellationChance(const FGameplayAttributeData& OldDamageCancellationChance) const;
 	
 	UFUNCTION()
-	void OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth) const;
+	void OnRep_MaxParanoia(const FGameplayAttributeData& OldMaxParanoia) const;
 	
 	UFUNCTION()
-	void OnRep_MaxMana(const FGameplayAttributeData& OldMaxMana) const;
+	void OnRep_MaxLife(const FGameplayAttributeData& OldMaxLife) const;
 	
 private:
 	void SetEffectProperties(const FGameplayEffectModCallbackData& Data, FEffectProperties& Props) const;

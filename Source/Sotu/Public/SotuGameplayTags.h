@@ -17,21 +17,24 @@ public:
  static const FSotuGameplayTags& Get() { return GameplayTags; };
  static void InitializeNativeGameplayTags();
 
- FGameplayTag Attributes_Primary_Strength;
- FGameplayTag Attributes_Primary_Intelligence;
- FGameplayTag Attributes_Primary_Resilience;
- FGameplayTag Attributes_Primary_Vigor;
+ FGameplayTag Attributes_Primary_Power;
+ FGameplayTag Attributes_Primary_Faith;
+ FGameplayTag Attributes_Primary_Tempo;
+ FGameplayTag Attributes_Primary_Fortune;
  
- FGameplayTag Attributes_Secondary_Armor;
- FGameplayTag Attributes_Secondary_ArmorPenetration;
- FGameplayTag Attributes_Secondary_BlockChance;
- FGameplayTag Attributes_Secondary_CriticalHitChance;
+ FGameplayTag Attributes_Secondary_PhysicalDamage;
+ FGameplayTag Attributes_Secondary_HeartDamage;
  FGameplayTag Attributes_Secondary_CriticalHitDamage;
- FGameplayTag Attributes_Secondary_CriticalHitResistance;
- FGameplayTag Attributes_Secondary_HealthRegeneration;
- FGameplayTag Attributes_Secondary_ManaRegeneration;
- FGameplayTag Attributes_Secondary_MaxHealth;
- FGameplayTag Attributes_Secondary_MaxMana;
+ FGameplayTag Attributes_Secondary_AttackSpeed;
+ FGameplayTag Attributes_Secondary_HeartCastSpeed;
+ FGameplayTag Attributes_Secondary_LifeRecoverySpeed;
+ FGameplayTag Attributes_Secondary_CriticalHitChance;
+ FGameplayTag Attributes_Secondary_DamageCancellationChance;
+ FGameplayTag Attributes_Secondary_MaxParanoia;
+ FGameplayTag Attributes_Secondary_MaxLife;
+
+ FGameplayTag Attributes_Vital_Paranoia;
+ FGameplayTag Attributes_Vital_Life;
 
  FGameplayTag InputTag_LMB;
  FGameplayTag InputTag_RMB;

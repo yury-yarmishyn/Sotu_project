@@ -14,22 +14,22 @@ USotuAttributeSet::USotuAttributeSet()
 	const FSotuGameplayTags& GameplayTags = FSotuGameplayTags::Get();
 
 	/* Primary Attributes */
-	TagsToAttributes.Add(GameplayTags.Attributes_Primary_Strength, GetStrengthAttribute);
-	TagsToAttributes.Add(GameplayTags.Attributes_Primary_Intelligence, GetIntelligenceAttribute);
-	TagsToAttributes.Add(GameplayTags.Attributes_Primary_Resilience, GetResilienceAttribute);
-	TagsToAttributes.Add(GameplayTags.Attributes_Primary_Vigor, GetVigorAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Primary_Power, GetPowerAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Primary_Faith, GetFaithAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Primary_Tempo, GetTempoAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Primary_Fortune, GetFortuneAttribute);
 
 	/* Secondary Attributes */
-	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_Armor, GetArmorAttribute);
-	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_ArmorPenetration, GetArmorPenetrationAttribute);
-	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_BlockChance, GetBlockChanceAttribute);	
-	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_CriticalHitChance, GetCriticalHitChanceAttribute);
-	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_CriticalHitResistance, GetCriticalHitResistanceAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_PhysicalDamage, GetPhysicalDamageAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_HeartDamage, GetHeartDamageAttribute);
 	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_CriticalHitDamage, GetCriticalHitDamageAttribute);
-	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_HealthRegeneration, GetHealthRegenerationAttribute);
-	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_ManaRegeneration, GetManaRegenerationAttribute);
-	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_MaxHealth, GetMaxHealthAttribute);
-	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_MaxMana, GetMaxManaAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_AttackSpeed, GetAttackSpeedAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_HeartCastSpeed, GetHeartCastSpeedAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_LifeRecoverySpeed, GetLifeRecoverySpeedAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_CriticalHitChance, GetCriticalHitChanceAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_DamageCancellationChance, GetDamageCancellationChanceAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_MaxParanoia, GetParanoiaAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_MaxLife, GetMaxLifeAttribute);
 }
 
 void USotuAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -38,41 +38,41 @@ void USotuAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 
 	// Vital Attributes
 	
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, Health, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, Mana, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, Paranoia, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, Life, COND_None, REPNOTIFY_Always);
 
 	// Primary Attributes
 	
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, Strength, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, Intelligence, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, Resilience, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, Vigor, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, Power, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, Faith, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, Tempo, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, Fortune, COND_None, REPNOTIFY_Always);
 
 	// Secondary Attributes
 	
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, Armor, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, ArmorPenetration, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, BlockChance, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, CriticalHitChance, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, PhysicalDamage, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, HeartDamage, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, CriticalHitDamage, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, CriticalHitResistance, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, HealthRegeneration, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, ManaRegeneration, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, MaxHealth, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, MaxMana, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, AttackSpeed, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, HeartCastSpeed, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, LifeRecoverySpeed, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, CriticalHitChance, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, DamageCancellationChance, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, MaxParanoia, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USotuAttributeSet, MaxLife, COND_None, REPNOTIFY_Always);
 }
 
 void USotuAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue)
 {
 	Super::PreAttributeChange(Attribute, NewValue);
 
-	if (Attribute == GetHealthAttribute())
+	if (Attribute == GetParanoiaAttribute())
 	{
-		NewValue = FMath::Clamp(NewValue, 0.f, GetMaxHealth());
+		NewValue = FMath::Clamp(NewValue, 0.f, GetMaxParanoia());
 	}
-	if (Attribute == GetManaAttribute())
+	if (Attribute == GetLifeAttribute())
 	{
-		NewValue = FMath::Clamp(NewValue, 0.f, GetMaxMana());
+		NewValue = FMath::Clamp(NewValue, 0.f, GetMaxLife());
 	}
 }
 
@@ -114,92 +114,92 @@ void USotuAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 	FEffectProperties Props;
 	SetEffectProperties(Data, Props);
 
-	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
+	if (Data.EvaluatedData.Attribute == GetParanoiaAttribute())
 	{
-		SetHealth(FMath::Clamp(GetHealth(), 0.f, GetMaxHealth()));
+		SetParanoia(FMath::Clamp(GetParanoia(), 0.f, GetMaxParanoia()));
 	}
-	if (Data.EvaluatedData.Attribute == GetManaAttribute())
+	if (Data.EvaluatedData.Attribute == GetLifeAttribute())
 	{
-		SetMana(FMath::Clamp(GetMana(), 0.f, GetMaxMana()));
+		SetLife(FMath::Clamp(GetLife(), 0.f, GetMaxLife()));
 	}
 }
 
-void USotuAttributeSet::OnRep_Health(const FGameplayAttributeData& OldHealth) const
+void USotuAttributeSet::OnRep_Paranoia(const FGameplayAttributeData& OldParanoia) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Health, OldHealth);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Paranoia, OldParanoia);
 }
 
-void USotuAttributeSet::OnRep_Mana(const FGameplayAttributeData& OldMana) const
+void USotuAttributeSet::OnRep_Life(const FGameplayAttributeData& OldLife) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Mana, OldMana);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Life, OldLife);
 }
 
-void USotuAttributeSet::OnRep_Strength(const FGameplayAttributeData& OldStrength) const
+void USotuAttributeSet::OnRep_Power(const FGameplayAttributeData& OldPower) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Strength, OldStrength);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Power, OldPower);
 }
 
-void USotuAttributeSet::OnRep_Intelligence(const FGameplayAttributeData& OldIntelligence) const
+void USotuAttributeSet::OnRep_Faith(const FGameplayAttributeData& OldFaith) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Intelligence, OldIntelligence);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Faith, OldFaith);
 }
 
-void USotuAttributeSet::OnRep_Resilience(const FGameplayAttributeData& OldResilience) const
+void USotuAttributeSet::OnRep_Tempo(const FGameplayAttributeData& OldTempo) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Resilience, OldResilience);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Tempo, OldTempo);
 }
 
-void USotuAttributeSet::OnRep_Vigor(const FGameplayAttributeData& OldVigor) const
+void USotuAttributeSet::OnRep_Fortune(const FGameplayAttributeData& OldFortune) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Vigor, OldVigor);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Fortune, OldFortune);
 }
 
-void USotuAttributeSet::OnRep_Armor(const FGameplayAttributeData& OldArmor) const
+void USotuAttributeSet::OnRep_PhysicalDamage(const FGameplayAttributeData& OldPhysicalDamage) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Vigor, OldArmor);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, PhysicalDamage, OldPhysicalDamage);
 }
 
-void USotuAttributeSet::OnRep_ArmorPenetration(const FGameplayAttributeData& OldArmorPenetration) const
+void USotuAttributeSet::OnRep_HeartDamage(const FGameplayAttributeData& OldHeartDamage) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Vigor, OldArmorPenetration);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, HeartDamage, OldHeartDamage);
 }
 
-void USotuAttributeSet::OnRep_BlockChance(const FGameplayAttributeData& OldBlockChance) const
+void USotuAttributeSet::OnRep_AttackSpeed(const FGameplayAttributeData& OldAttackSpeed) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Vigor, OldBlockChance);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, AttackSpeed, OldAttackSpeed);
 }
 
-void USotuAttributeSet::OnRep_CriticalHitChance(const FGameplayAttributeData& OldCriticalHitChance) const
+void USotuAttributeSet::OnRep_HeartCastSpeed(const FGameplayAttributeData& OldHeartCastSpeed) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Vigor, OldCriticalHitChance);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, HeartCastSpeed, OldHeartCastSpeed);
 }
 
 void USotuAttributeSet::OnRep_CriticalHitDamage(const FGameplayAttributeData& OldCriticalHitDamage) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Vigor, OldCriticalHitDamage);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, CriticalHitDamage, OldCriticalHitDamage);
 }
 
-void USotuAttributeSet::OnRep_CriticalHitResistance(const FGameplayAttributeData& OldCriticalHitResistance) const
+void USotuAttributeSet::OnRep_LifeRecoverySpeed(const FGameplayAttributeData& OldLifeRecoverySpeed) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Vigor, OldCriticalHitResistance);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, LifeRecoverySpeed, OldLifeRecoverySpeed);
 }
 
-void USotuAttributeSet::OnRep_HealthRegeneration(const FGameplayAttributeData& OldHealthRegeneration) const
+void USotuAttributeSet::OnRep_CriticalHitChance(const FGameplayAttributeData& OldCriticalHitChance) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Vigor, OldHealthRegeneration);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, CriticalHitChance, OldCriticalHitChance);
 }
 
-void USotuAttributeSet::OnRep_ManaRegeneration(const FGameplayAttributeData& OldManaRegeneration) const
+void USotuAttributeSet::OnRep_DamageCancellationChance(const FGameplayAttributeData& OldDamageCancellationChance) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, Vigor, OldManaRegeneration);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, DamageCancellationChance, OldDamageCancellationChance);
 }
 
-void USotuAttributeSet::OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth) const
+void USotuAttributeSet::OnRep_MaxParanoia(const FGameplayAttributeData& OldMaxParanoia) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, MaxHealth, OldMaxHealth);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, MaxParanoia, OldMaxParanoia);
 }
 
-void USotuAttributeSet::OnRep_MaxMana(const FGameplayAttributeData& OldMaxMana) const
+void USotuAttributeSet::OnRep_MaxLife(const FGameplayAttributeData& OldMaxLife) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, MaxMana, OldMaxMana);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USotuAttributeSet, MaxLife, OldMaxLife);
 }

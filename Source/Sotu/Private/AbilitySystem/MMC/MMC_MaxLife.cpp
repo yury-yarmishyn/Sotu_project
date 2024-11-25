@@ -1,20 +1,20 @@
 // stan
 
 
-#include "AbilitySystem/MMC/MMC_MaxHealth.h"
+#include "AbilitySystem/MMC/MMC_MaxLife.h"
 #include "AbilitySystem/SotuAttributeSet.h"
 #include "Interaction/CombatInterface.h"
 
-UMMC_MaxHealth::UMMC_MaxHealth()
+UMMC_MaxLife::UMMC_MaxLife()
 {
-	VigorDef.AttributeToCapture = USotuAttributeSet::GetVigorAttribute();
-	VigorDef.AttributeSource = EGameplayEffectAttributeCaptureSource::Target;
-	VigorDef.bSnapshot = false;
+	FaithDef.AttributeToCapture = USotuAttributeSet::GetFaithAttribute();
+	FaithDef.AttributeSource = EGameplayEffectAttributeCaptureSource::Target;
+	FaithDef.bSnapshot = false;
 
-	RelevantAttributesToCapture.Add(VigorDef);
+	RelevantAttributesToCapture.Add(FaithDef);
 }
 
-float UMMC_MaxHealth::CalculateBaseMagnitude_Implementation(const FGameplayEffectSpec& Spec) const
+float UMMC_MaxLife::CalculateBaseMagnitude_Implementation(const FGameplayEffectSpec& Spec) const
 {
 	// Gather tags from source and target
 	const FGameplayTagContainer* SourceTags = Spec.CapturedSourceTags.GetAggregatedTags();
@@ -24,14 +24,12 @@ float UMMC_MaxHealth::CalculateBaseMagnitude_Implementation(const FGameplayEffec
 	EvaluateParameters.SourceTags = SourceTags;
 	EvaluateParameters.TargetTags = TargetTags;
 
-	float Vigor = 0.f;
-	GetCapturedAttributeMagnitude(VigorDef, Spec, EvaluateParameters, Vigor);
-	Vigor = FMath::Max<float>(Vigor, 0.0f);
+	float Faith = 0.f;
+	GetCapturedAttributeMagnitude(FaithDef, Spec, EvaluateParameters, Faith);
+	Faith = FMath::Max<float>(Faith, 0.0f);
 
 	ICombatInterface* CombatInterface = Cast<ICombatInterface>(Spec.GetContext().GetSourceObject());
 	const int32 PlayerLevel = CombatInterface->GetPlayerLevel();
 
-	return 80.f + 2.5f * Vigor + 10.f * PlayerLevel;
+	return 50.f + 4.f * Faith + 5.f * PlayerLevel;
 }
-
-

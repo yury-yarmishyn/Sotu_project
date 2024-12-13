@@ -1,7 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// stan
 
 
 #include "SotuAssetManager.h"
+
+#include "AbilitySystemGlobals.h"
 #include "SotuGameplayTags.h"
 
 USotuAssetManager& USotuAssetManager::Get()
@@ -15,6 +17,6 @@ USotuAssetManager& USotuAssetManager::Get()
 void USotuAssetManager::StartInitialLoading()
 {
 	Super::StartInitialLoading();
-
 	FSotuGameplayTags::InitializeNativeGameplayTags();
+	UAbilitySystemGlobals::Get().InitGlobalData();
 }

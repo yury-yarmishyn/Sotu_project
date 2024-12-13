@@ -7,7 +7,6 @@
 #include "Input/SotuInputConfig.h"
 #include "SotuPlayerController.generated.h"
 
-
 class USplineComponent;
 class UInputMappingContext;
 class UInputAction;
@@ -23,8 +22,8 @@ class SOTU_API ASotuPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 public:
-	ASotuPlayerController();
-	virtual void PlayerTick(float DeltaTime) override;
+	//ASotuPlayerController();
+	//virtual void PlayerTick(float DeltaTime) override;
 protected:
 	virtual void BeginPlay() override;
 	virtual void SetupInputComponent() override;
@@ -34,6 +33,9 @@ private:
 
 	UPROPERTY(EditAnywhere, Category="Input")
 	TObjectPtr<UInputAction> MoveAction;
+	
+	UPROPERTY(EditDefaultsOnly, Category="Input")
+	TObjectPtr<USotuInputConfig> InputConfig;
 
 	void Move(const FInputActionValue& InputActionValue);
 
@@ -43,29 +45,8 @@ private:
 	TScriptInterface<IEnemyInterface> ThisActor;
 	FHitResult CursorHit;
 
-	void AbilityInputTagPressed(FGameplayTag InputTag);
-	void AbilityInputTagReleased(FGameplayTag InputTag);
-	void AbilityInputTagHeld(FGameplayTag InputTag);
-	
-	UPROPERTY(EditDefaultsOnly, Category="Input")
-	TObjectPtr<USotuInputConfig> InputConfig;
-
 	UPROPERTY()
 	TObjectPtr<USotuAbilitySystemComponent> SotuAbilitySystemComponent;
 	
 	USotuAbilitySystemComponent* GetAbilitySystemComponent();
-
-	FVector CachedDestination = FVector::ZeroVector;
-	float FollowTime = 0.f;
-	float ShortPressThreshold = 0.5f;
-	bool bAutoRunning = false;
-	bool bTargeting = false;
-
-	UPROPERTY(EditDefaultsOnly)
-	float AutoRunAcceptanceRadius = 50.f;
-
-	UPROPERTY(VisibleAnywhere)
-	TObjectPtr<USplineComponent> Spline;
-
-	void AutoRun();
 };

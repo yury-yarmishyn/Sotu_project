@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
+#include "InputAction.h"
+#include "InputMappingContext.h"
 #include "Engine/DataAsset.h"
 #include "SotuInputConfig.generated.h"
 
@@ -12,10 +14,10 @@ struct FSotuInputAction
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditDefaultsOnly)
-	const class UInputAction* InputAction = nullptr;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UInputAction* InputAction = nullptr;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	FGameplayTag InputTag = FGameplayTag();
 };
 
@@ -28,8 +30,11 @@ class SOTU_API USotuInputConfig : public UDataAsset
 	GENERATED_BODY()
 
 public:
-	const UInputAction* FindAbilityInputActionForTag(const FGameplayTag& InputTag, bool bLogNotFound = false) const;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UInputMappingContext* DefaultMappingContext;
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	TArray<FSotuInputAction> AbilityInputActions;
+
+	UInputAction* FindNativeInputActionByTag(const FGameplayTag& InInputTag) const;
 };

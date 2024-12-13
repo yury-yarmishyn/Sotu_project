@@ -3,20 +3,14 @@
 
 #include "Input/SotuInputConfig.h"
 
-const UInputAction* USotuInputConfig::FindAbilityInputActionForTag(const FGameplayTag& InputTag,
-	bool bLogNotFound) const
+UInputAction* USotuInputConfig::FindNativeInputActionByTag(const FGameplayTag& InInputTag) const
 {
-	for (const FSotuInputAction& Action: AbilityInputActions)
+	for (const FSotuInputAction& InputActionConfig : AbilityInputActions)
 	{
-		if (Action.InputAction && Action.InputTag == InputTag)
+		if (InputActionConfig.InputTag == InInputTag && InputActionConfig.InputAction)
 		{
-			return Action.InputAction;
+			return InputActionConfig.InputAction;
 		}
-	}
-
-	if (bLogNotFound)
-	{
-		UE_LOG(LogTemp, Error, TEXT("Can't find AbilityInputAction for InputTag [%s], on InputConfig [%s]]"), *InputTag.ToString(), *GetNameSafe(this));
 	}
 
 	return nullptr;

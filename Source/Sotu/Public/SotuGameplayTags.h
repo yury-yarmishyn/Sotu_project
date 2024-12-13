@@ -36,6 +36,8 @@ public:
  FGameplayTag Attributes_Vital_Paranoia;
  FGameplayTag Attributes_Vital_Life;
 
+ FGameplayTag InputTag_Move;
+ FGameplayTag InputTag_Look;
  FGameplayTag InputTag_LMB;
  FGameplayTag InputTag_RMB;
  FGameplayTag InputTag_1;

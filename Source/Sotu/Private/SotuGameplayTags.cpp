@@ -103,6 +103,16 @@ void FSotuGameplayTags::InitializeNativeGameplayTags()
 	/*
 	 * Input Tags
 	 */
+
+	GameplayTags.InputTag_Move = UGameplayTagsManager::Get().AddNativeGameplayTag(
+		FName("InputTag.Move"),
+		FString("Input Tag for Move")
+		);
+	
+	GameplayTags.InputTag_Look = UGameplayTagsManager::Get().AddNativeGameplayTag(
+		FName("InputTag.Look"),
+		FString("Input Tag for Look")
+		);
 	
 	GameplayTags.InputTag_LMB = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("InputTag.LMB"),

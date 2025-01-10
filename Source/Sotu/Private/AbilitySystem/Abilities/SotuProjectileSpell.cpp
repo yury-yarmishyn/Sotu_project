@@ -4,6 +4,7 @@
 #include "AbilitySystem/Abilities/SotuProjectileSpell.h"
 
 #include "Interaction/CombatInterface.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 void USotuProjectileSpell::ActivateAbility(const FGameplayAbilitySpecHandle Handle,
                                            const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo,
@@ -11,7 +12,7 @@ void USotuProjectileSpell::ActivateAbility(const FGameplayAbilitySpecHandle Hand
 {
 	Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
 
-	
+	UKismetSystemLibrary::PrintString(this, "ActivateAbility", true, true);
 }
 
 void USotuProjectileSpell::SpawnProjectile(const FVector& ProjectileTargetLocation)

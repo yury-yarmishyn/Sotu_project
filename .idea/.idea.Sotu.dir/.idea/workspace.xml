@@ -9,27 +9,28 @@
   <component name="ChangeListManager">
     <list default="true" id="87e49b45-c2c2-41e3-93c6-58756eb7ce32" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sotu.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sotu.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AbilitySystem/GameplayAbilities/Fire/FireBolt/BP_FireBolt.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AbilitySystem/GameplayAbilities/Fire/FireBolt/BP_FireBolt.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/AbilitySystem/GameplayAbilities/Fire/FireBolt/GA_FireBolt.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AbilitySystem/GameplayAbilities/Fire/FireBolt/GA_FireBolt.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Character/Aura/BP_SotuCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Character/Aura/BP_SotuCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Actor/Potion/GE_PotionHeal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Actor/Potion/GE_PotionHeal.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Actor/TestActor/GE_TestAttributeBased.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Actor/TestActor/GE_TestAttributeBased.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AnimNotifies/AN_MontageEvent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AnimNotifies/AN_MontageEvent.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Character/Aura/ABP_Aura.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Character/Aura/BP_SotuCharacter.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Game/BP_SotuGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Game/BP_SotuGameMode.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/DA_SotuInputConfig.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Input/DA_SotuInputConfig.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/IMC_SotuContext.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Input/IMC_SotuContext.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_SotuPlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Player/BP_SotuPlayerController.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/StartupMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/StartupMap.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sotu.uproject.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Sotu.uproject.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Sotu/Private/AbilitySystem/Abilities/SotuProjectileSpell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Private/AbilitySystem/Abilities/SotuProjectileSpell.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Sotu/Private/AbilitySystem/AbilityTasks/TargetDataUnderMouse.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Private/AbilitySystem/AbilityTasks/TargetDataUnderMouse.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Sotu/Private/AbilitySystem/SotuAbilitySystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Private/AbilitySystem/SotuAbilitySystemComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Sotu/Private/Character/SotuCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Private/Character/SotuCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Sotu/Private/Input/SotuInputConfig.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Private/Input/SotuInputConfig.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Sotu/Private/Player/SotuPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Private/Player/SotuPlayerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Sotu/Private/SotuAssetManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Private/SotuAssetManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Sotu/Private/SotuGameplayTags.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Private/SotuGameplayTags.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Sotu/Public/AbilitySystem/Abilities/SotuProjectileSpell.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Public/AbilitySystem/Abilities/SotuProjectileSpell.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Sotu/Public/AbilitySystem/AbilityTasks/TargetDataUnderMouse.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Public/AbilitySystem/AbilityTasks/TargetDataUnderMouse.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Sotu/Public/AbilitySystem/SotuAbilitySystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Public/AbilitySystem/SotuAbilitySystemComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Sotu/Public/Character/SotuCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Public/Character/SotuCharacter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Sotu/Public/Input/SotuInputComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Public/Input/SotuInputComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Sotu/Public/Input/SotuInputConfig.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Public/Input/SotuInputConfig.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Sotu/Public/Player/SotuPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Public/Player/SotuPlayerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Sotu/Public/SotuAssetManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Public/SotuAssetManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Sotu/Public/SotuGameplayTags.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Sotu/Public/SotuGameplayTags.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="cidr-memory-view://0" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://13" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sotu.uproject" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Sotu/Private/Player/SotuPlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Sotu/Private/UI/HUD/SotuHUD.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -56,7 +69,10 @@
     <setting file="file://$PROJECT_DIR$/../UE_5.4/Engine/Source/Runtime/CoreUObject/Private/UObject/Class.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UE_5.4/Engine/Source/Runtime/CoreUObject/Private/UObject/UObjectGlobals.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UE_5.4/Engine/Source/Runtime/CoreUObject/Public/UObject/UObjectBase.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/Pawn.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../UE_5.4/Engine/Source/Runtime/Engine/Private/Controller.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UE_5.4/Engine/Source/Runtime/Engine/Private/KismetSystemLibrary.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../UE_5.4/Engine/Source/Runtime/Engine/Private/PlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UE_5.4/Engine/Source/Runtime/Engine/Public/Net/UnrealNetwork.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UE_5.4/Engine/Source/Runtime/GameplayTags/Classes/GameplayTagContainer.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UE_5.4/Engine/Source/Runtime/GameplayTags/Classes/GameplayTagsManager.h" root0="FORCE_HIGHLIGHTING" />
@@ -79,7 +95,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "Uproject.Sotu.executor": "Run",
+    "Uproject.Sotu.executor": "Debug",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -97,7 +113,7 @@
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
         <option name="EXECUTABLE_PATH" value="D:\UE_5.4\Engine\Binaries\Win64\UnrealEditor.exe" />
-        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;D:\Sotu_old\Sotu.uproject&quot;" />
+        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;D:\Sotu_cpp\Sotu.uproject&quot;" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="WORKING_DIRECTORY" value="D:\UE_5.4" />
         <option name="PASS_PARENT_ENVS" value="1" />
@@ -110,7 +126,7 @@
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
         <option name="EXECUTABLE_PATH" value="D:\UE_5.4\Engine\Binaries\Win64\UnrealEditor-Win64-DebugGame.exe" />
-        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;D:\Sotu_old\Sotu.uproject&quot;" />
+        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;D:\Sotu_cpp\Sotu.uproject&quot;" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="WORKING_DIRECTORY" value="D:\UE_5.4" />
         <option name="PASS_PARENT_ENVS" value="1" />
@@ -122,7 +138,7 @@
         <option name="CONFIGURATION" value="DebugGame" />
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
-        <option name="EXECUTABLE_PATH" value="D:\Sotu_old\Binaries\Win64\Sotu-Win64-DebugGame.exe" />
+        <option name="EXECUTABLE_PATH" value="D:\Sotu_cpp\Binaries\Win64\Sotu-Win64-DebugGame.exe" />
         <option name="MANDATORY_PROGRAM_PARAMETERS" value="" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="WORKING_DIRECTORY" value="D:\UE_5.4" />
@@ -135,7 +151,7 @@
         <option name="CONFIGURATION" value="Development" />
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
-        <option name="EXECUTABLE_PATH" value="D:\Sotu_old\Binaries\Win64\Sotu.exe" />
+        <option name="EXECUTABLE_PATH" value="D:\Sotu_cpp\Binaries\Win64\Sotu.exe" />
         <option name="MANDATORY_PROGRAM_PARAMETERS" value="" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="WORKING_DIRECTORY" value="D:\UE_5.4" />
@@ -148,7 +164,7 @@
         <option name="CONFIGURATION" value="Shipping" />
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
-        <option name="EXECUTABLE_PATH" value="D:\Sotu_old\Binaries\Win64\Sotu-Win64-Shipping.exe" />
+        <option name="EXECUTABLE_PATH" value="D:\Sotu_cpp\Binaries\Win64\Sotu-Win64-Shipping.exe" />
         <option name="MANDATORY_PROGRAM_PARAMETERS" value="" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="WORKING_DIRECTORY" value="D:\UE_5.4" />
@@ -209,6 +225,9 @@
       <workItem from="1734040621062" duration="751000" />
       <workItem from="1734117446547" duration="1863000" />
       <workItem from="1734125875734" duration="2886000" />
+      <workItem from="1734171750531" duration="2438000" />
+      <workItem from="1734202190255" duration="3283000" />
+      <workItem from="1736504275547" duration="13435000" />
     </task>
     <servers />
   </component>

@@ -20,8 +20,8 @@ struct FSotuGameplayTags;
 ASotuCharacter::ASotuCharacter()
 {
 	GetCapsuleComponent()->InitCapsuleSize(40.f, 90.f);
-	bUseControllerRotationPitch = false;
-	bUseControllerRotationYaw = false;
+	bUseControllerRotationPitch = true;
+	bUseControllerRotationYaw = true;
 	bUseControllerRotationRoll = false;
 
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>("CameraBoom");
@@ -32,7 +32,7 @@ ASotuCharacter::ASotuCharacter()
 
 	PlayerCamera = CreateDefaultSubobject<UCameraComponent>("PlayerCamera");
 	PlayerCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
-	PlayerCamera->bUsePawnControlRotation = false;
+	PlayerCamera->bUsePawnControlRotation = true;
 
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.f, 500.f, 0.f);
@@ -65,24 +65,6 @@ int32 ASotuCharacter::GetPlayerLevel()
 	return SotuPlayerState->GetPlayerLevel();
 }
 
-void ASotuCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
-{
-	checkf(InputConfigDataAsset,TEXT("Forgot to assign a valid data asset as input config"));
-
-	ULocalPlayer* LocalPlayer = GetController<APlayerController>()->GetLocalPlayer();
-
-	UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(LocalPlayer);
-
-	check(Subsystem);
-
-	Subsystem->AddMappingContext(InputConfigDataAsset->DefaultMappingContext,0);
-
-	USotuInputComponent* SotuInputComponent = CastChecked<USotuInputComponent>(PlayerInputComponent);
-
-	SotuInputComponent->BindNativeInputAction(InputConfigDataAsset, FSotuGameplayTags::Get().InputTag_Move, ETriggerEvent::Triggered,this, &ThisClass::Input_Move);
-	SotuInputComponent->BindNativeInputAction(InputConfigDataAsset, FSotuGameplayTags::Get().InputTag_Look, ETriggerEvent::Triggered ,this, &ThisClass::Input_Look);
-}
-
 void ASotuCharacter::InitAbilityActorInfo()
 {
 	ASotuPlayerState* SotuPlayerState = GetPlayerState<ASotuPlayerState>();
@@ -100,40 +82,4 @@ void ASotuCharacter::InitAbilityActorInfo()
 		}
 	}
 	InitializeDefaultAttributes();
-}
-
-void ASotuCharacter::Input_Move(const FInputActionValue& InputActionValue)
-{	
-	const FVector2D MovementVector = InputActionValue.Get<FVector2D>();
-
-	const FRotator MovementRotation(0.f,Controller->GetControlRotation().Yaw,0.f);
-
-	if (MovementVector.Y != 0.f)
-	{
-		const FVector ForwardDirection = MovementRotation.RotateVector(FVector::ForwardVector);
-
-		AddMovementInput(ForwardDirection,MovementVector.Y);
-	}
-
-	if (MovementVector.X != 0.f)
-	{
-		const FVector RightDirection = MovementRotation.RotateVector(FVector::RightVector);
-
-		AddMovementInput(RightDirection,MovementVector.X);
-	}
-}
-
-void ASotuCharacter::Input_Look(const FInputActionValue& InputActionValue)
-{
-	const FVector2D LookAxisVector = InputActionValue.Get<FVector2D>();
-	
-	if (LookAxisVector.X != 0.f)
-	{
-		AddControllerYawInput(LookAxisVector.X);
-	}
-
-	if (LookAxisVector.Y != 0.f)
-	{
-		AddControllerPitchInput(-LookAxisVector.Y);
-	}
 }

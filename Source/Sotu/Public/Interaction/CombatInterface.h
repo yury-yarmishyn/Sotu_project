@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Player/SotuPlayerState.h"
 #include "UObject/Interface.h"
 #include "CombatInterface.generated.h"
 

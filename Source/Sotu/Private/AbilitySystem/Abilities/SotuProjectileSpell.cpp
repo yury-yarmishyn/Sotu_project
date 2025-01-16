@@ -3,8 +3,11 @@
 
 #include "AbilitySystem/Abilities/SotuProjectileSpell.h"
 
+#include "Character/SotuCharacterBase.h"
 #include "Interaction/CombatInterface.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "Player/SotuPlayerController.h"
+#include "Player/SotuPlayerState.h"
 
 void USotuProjectileSpell::ActivateAbility(const FGameplayAbilitySpecHandle Handle,
                                            const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo,
@@ -24,20 +27,39 @@ void USotuProjectileSpell::SpawnProjectile(const FVector& ProjectileTargetLocati
 	if (CombatInterface)
 	{
 		const FVector SocketLocation = CombatInterface->GetCombatSocketLocation();
-		FRotator Rotation = (ProjectileTargetLocation - SocketLocation).Rotation();
-		Rotation.Pitch = 0.f;
+
+		const ASotuPlayerState* PlayerState = Cast<ASotuPlayerState>(GetOwningActorFromActorInfo());
+		APawn* OwningPawn = PlayerState->GetPawn();
+		if (!OwningPawn) return;
+
+		const APlayerController* PlayerController = PlayerState->GetPlayerController();
+		if (!PlayerController) return;
+
+		FVector Direction;
+		if (ProjectileTargetLocation != FVector::ZeroVector)
+		{
+			Direction = (ProjectileTargetLocation - SocketLocation).GetSafeNormal();
+		}
+		else
+		{
+			FVector CameraLocation;
+			FRotator CameraRotation;
+			PlayerController->GetPlayerViewPoint(CameraLocation, CameraRotation);
+
+			Direction = (CameraLocation + CameraRotation.Vector() * 1000.0f - SocketLocation).GetSafeNormal();
+		}
 		
 		FTransform SpawnTransform;
 		SpawnTransform.SetLocation(SocketLocation);
-		SpawnTransform.SetRotation(Rotation.Quaternion());
-		
+		SpawnTransform.SetRotation(Direction.Rotation().Quaternion());
+
 		ASotuProjectile* Projectile = GetWorld()->SpawnActorDeferred<ASotuProjectile>(
 			ProjectileClass,
 			SpawnTransform,
-			GetOwningActorFromActorInfo(),
-			Cast<APawn>(GetOwningActorFromActorInfo()),
+			OwningPawn,
+			OwningPawn,
 			ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
-
+		
 		Projectile->FinishSpawning(SpawnTransform);
 	}
 }
